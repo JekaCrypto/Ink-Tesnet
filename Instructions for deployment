@@ -1,0 +1,66 @@
+Покрокова інструкція:
+Завантаження контракту:
+
+Відкрий Remix на remix.ethereum.org.
+Створи новий файл, наприклад, InkNFT.sol.
+Скопіюй та встав виправлений код контракту.
+Вибір компілятора:
+
+Перейди на вкладку Solidity Compiler (значок із молотом).
+Вибери версію компілятора 0.8.x, яка відповідає версії в контракті:
+solidity
+Копіювати код
+pragma solidity ^0.8.0;
+Натисни Compile InkNFT.sol.
+Розгортання контракту:
+
+Перейди на вкладку Deploy & Run Transactions (значок із прямокутником і стрілкою).
+Вибери середовище розгортання:
+Injected Provider - Metamask для розгортання на тестнеті або основній мережі.
+JavaScript VM (London) для локального тестування.
+Введи параметр конструктора baseTokenURI (наприклад, https://example.com/metadata/).
+Натисни Deploy.
+Перевірка контракту:
+
+Після розгортання ти побачиш розділ із назвою контракту внизу.
+Використовуй функції, такі як:
+mint: Щоб створити новий NFT (вкажи адресу власника).
+setBaseURI: Щоб змінити базовий URI.
+nextTokenId: Щоб дізнатися, який ID буде наступним.
+Тестування:
+
+Можеш випробувати контракт у Remix, викликаючи функції та перевіряючи результат.
+
+
+How to Deploy the Contract in Remix
+Load the Contract:
+
+Open Remix at remix.ethereum.org.
+Create a new file, for example, InkNFT.sol.
+Copy and paste the corrected contract code into the file.
+Select Compiler:
+
+Go to the Solidity Compiler tab (hammer icon).
+Choose a compiler version 0.8.x that matches the version specified in the contract:
+solidity
+Копіювати код
+pragma solidity ^0.8.0;
+Click Compile InkNFT.sol.
+Deploy the Contract:
+
+Go to the Deploy & Run Transactions tab (rectangle with arrow icon).
+Choose the deployment environment:
+Injected Provider - Metamask for deploying on a testnet or mainnet.
+JavaScript VM (London) for local testing.
+Enter the constructor parameter baseTokenURI (e.g., https://example.com/metadata/).
+Click Deploy.
+Verify the Contract:
+
+After deployment, you’ll see a section with the contract name at the bottom.
+Use the functions, such as:
+mint: To create a new NFT (specify the owner's address).
+setBaseURI: To change the base URI.
+nextTokenId: To check the next available token ID.
+Testing:
+
+You can test the contract directly in Remix by calling its functions and checking the results.
