@@ -1,0 +1,33 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract MyNFT is ERC721, Ownable {
+    uint256 public nextTokenId; // Лічильник для ID токенів
+    string private _baseTokenURI; // Базовий URI для метаданих
+
+    constructor(string memory baseTokenURI) 
+        ERC721("NFT_for_tesnet", "INKNFT") // назва і символ токену NFT
+        Ownable(msg.sender) 
+    {
+        _baseTokenURI = baseTokenURI;
+    }
+
+    // Функція для м'ятингу нових NFT
+    function mint(address to) public onlyOwner {
+        _safeMint(to, nextTokenId);
+        nextTokenId++;
+    }
+
+    // Встановлення базового URI
+    function setBaseURI(string memory baseTokenURI) public onlyOwner {
+        _baseTokenURI = baseTokenURI;
+    }
+
+    // Повернення базового URI
+    function _baseURI() internal view override returns (string memory) {
+        return _baseTokenURI;
+    }
+}
